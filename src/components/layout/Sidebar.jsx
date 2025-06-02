@@ -4,45 +4,49 @@ import { ChevronDown, LogOut } from 'lucide-react';
 
 const Sidebar = ({ onClose }) => {
   return (
-    <div className="w-[280px] lg:w-64 bg-[#1a1625]/90 backdrop-blur-sm h-screen text-white flex flex-col">
-      <div className="flex-1 p-6">
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#E056D7] to-[#7948EA] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">B</span>
-            </div>
-            <span className="text-white font-semibold">Dashboard</span>
-          </div>
+    <div className="w-[280px] bg-[#1F1B2E] h-screen text-white flex flex-col">
+      {/* Logo */}
+      <div className="p-6">
+        <div className="w-12 h-12 bg-gradient-to-r from-[#E056D7] to-[#7948EA] rounded-full flex items-center justify-center border-4 border-[#2D1F47]">
+          <span className="text-white font-bold text-2xl">B</span>
         </div>
-        
+      </div>
+
+      {/* Navigation */}
+      <div className="flex-1 py-6">
         <nav className="space-y-6">
-          <div>
-            <div className="text-gray-400 text-xs uppercase tracking-wider mb-2">Events</div>
-            <div className="space-y-1">
+          {/* Events Section */}
+          <div className="px-6">
+            <div className="flex items-center justify-between text-white mb-4">
+              <span className="text-base">Events</span>
+              <ChevronDown size={16} className="text-gray-400" />
+            </div>
+            <div className="space-y-2">
               <Link 
                 to="/new-requests" 
-                className="flex items-center w-full text-left px-3 py-2 rounded-lg text-white bg-gradient-to-r from-[#E056D7] to-[#7948EA]"
+                className="flex items-center w-full text-left px-4 py-2 text-[#E056D7]"
                 onClick={() => onClose?.()}
               >
                 New Requests
               </Link>
               <Link 
                 to="/estimate" 
-                className="flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-400 hover:text-white transition-colors"
+                className="flex items-center w-full text-left px-4 py-2 text-gray-400"
                 onClick={() => onClose?.()}
               >
                 Estimate
+                <span className="ml-2 bg-white bg-opacity-10 text-white px-2 py-0.5 rounded text-xs">9</span>
               </Link>
               <Link 
                 to="/events" 
-                className="flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-400 hover:text-white transition-colors"
+                className="flex items-center w-full text-left px-4 py-2 text-gray-400"
                 onClick={() => onClose?.()}
               >
                 Events
               </Link>
               <Link 
                 to="/partial-requests" 
-                className="flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-400 hover:text-white transition-colors"
+                className="flex items-center w-full text-left px-4 py-2 text-gray-400"
                 onClick={() => onClose?.()}
               >
                 Partial Requests
@@ -50,67 +54,82 @@ const Sidebar = ({ onClose }) => {
             </div>
           </div>
 
-          <div>
-            <div className="text-gray-400 text-xs uppercase tracking-wider mb-2">Positions</div>
+          {/* Positions Section */}
+          <div className="px-6">
+            <h2 className="text-base text-white mb-4">Positions</h2>
             <Link 
               to="/positions" 
-              className="flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-400 hover:text-white transition-colors"
+              className="flex items-center w-full text-left px-4 py-2 text-gray-400"
               onClick={() => onClose?.()}
             >
               Positions
             </Link>
           </div>
 
-          <div>
-            <div className="text-gray-400 text-xs uppercase tracking-wider mb-2">Contractors</div>
+          {/* Contractors Section */}
+          <div className="px-6">
+            <h2 className="text-base text-white mb-4">Contractors</h2>
             <Link 
               to="/contractors" 
-              className="flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-400 hover:text-white transition-colors"
+              className="flex items-center w-full text-left px-4 py-2 text-gray-400"
               onClick={() => onClose?.()}
             >
               Contractors
             </Link>
           </div>
-          
-          <div>
-            <div className="text-gray-400 text-xs uppercase tracking-wider mb-2">Users</div>
-            <div className="space-y-1">
+
+          {/* Users Section */}
+          <div className="px-6">
+            <div className="flex items-center justify-between text-white mb-4">
+              <span className="text-base">Users</span>
+              <ChevronDown size={16} className="text-gray-400 transform rotate-180" />
+            </div>
+            <div className="pl-4 space-y-2">
               <Link 
                 to="/admins" 
-                className="flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-400 hover:text-white transition-colors"
+                className="flex items-center w-full text-left px-4 py-2 text-gray-400"
                 onClick={() => onClose?.()}
               >
-                <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
                 Admins
               </Link>
               <Link 
                 to="/clients" 
-                className="flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-400 hover:text-white transition-colors"
+                className="flex items-center w-full text-left px-4 py-2 text-gray-400"
                 onClick={() => onClose?.()}
               >
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
                 Clients
               </Link>
               <Link 
                 to="/coordinators" 
-                className="flex items-center w-full text-left px-3 py-2 rounded-lg text-gray-400 hover:text-white transition-colors"
+                className="flex items-center w-full text-left px-4 py-2 text-gray-400"
                 onClick={() => onClose?.()}
               >
-                <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
                 Coordinators
               </Link>
             </div>
+          </div>
+
+          {/* Profile Section */}
+          <div className="px-6">
+            <h2 className="text-base text-white mb-4">Profile</h2>
+            <Link 
+              to="/profile" 
+              className="flex items-center w-full text-left px-4 py-2 text-gray-400"
+              onClick={() => onClose?.()}
+            >
+              Profile
+            </Link>
           </div>
         </nav>
       </div>
 
       {/* Logout Button */}
-      <div className="p-6 border-t border-[#2D2A37]">
+      <div className="p-6">
         <button 
-          className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors w-full"
+          className="flex items-center gap-2 bg-white bg-opacity-5 text-gray-400 w-full px-4 py-3 rounded-lg"
           onClick={() => onClose?.()}
         >
-          <LogOut size={20} />
+          <LogOut size={18} />
           <span>Logout</span>
         </button>
       </div>
